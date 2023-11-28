@@ -32,6 +32,7 @@ class LoggedInSuccessfully(BasePage):
 
 
 class LoggedInUnsuccessfully(BasePage):
+
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
 
@@ -39,5 +40,6 @@ class LoggedInUnsuccessfully(BasePage):
     def expected_url(self) -> str:
         return LoggedInUnsuccessfullyLocators.url
 
-    def header(self) -> bool:
-        return self.is_displayed(LoggedInUnsuccessfullyLocators.header)
+    @property
+    def header(self) -> str:
+        return self.get_text(LoggedInUnsuccessfullyLocators.header_password_is_required)

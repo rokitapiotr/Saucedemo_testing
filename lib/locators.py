@@ -18,4 +18,4 @@ class LoggedInSuccessfullyLocators:
 class LoggedInUnsuccessfullyLocators:
 
     url = "https://www.saucedemo.com/"
-    header = (By.XPATH, '//*[@id="login_button_container"]/div/form/div[3]/h3')
+    header_password_is_required = (By.XPATH, '//*[@id="login_button_container"]/div/form/div[3]/h3')

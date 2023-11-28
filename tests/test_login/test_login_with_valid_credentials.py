@@ -7,14 +7,13 @@ test_data = [
 ]
 
 
-@pytest.mark.account_log_in
-@pytest.mark.positive
-@pytest.mark.parametrize("login, password", test_data)
-def test_positive_login(driver, login, password):
+@pytest.mark.log_in
+@pytest.mark.parametrize("username, password", test_data)
+def test_login_with_valid_credentials(driver, username, password):
 
     login_page = LoginPage(driver)
     login_page.open()
-    login_page.login(login, password)
+    login_page.login(username, password)
     positive_logging = LoggedInSuccessfully(driver)
 
     assert positive_logging.footer == "© 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy", "Footer is not the same as expected"
