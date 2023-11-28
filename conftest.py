@@ -12,18 +12,19 @@ def driver(request):
     browser = request.config.getoption("--browser")
     print(f"Creating {browser} driver")
 
-    if browser == "chrome":
-        my_driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-    elif browser == "firefox":
-        my_driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-    elif browser == "safari":
-        my_driver = webdriver.Safari(service=Safari(GeckoDriverManager().install()))
-    elif browser == "edge":
-        my_driver = webdriver.Edge()
-    elif browser == "ie":
-        my_driver = webdriver.Ie()
-    else:
-        raise TypeError(f"Expected 'chrome', 'firefox' , 'safari', 'edge', 'ie' but got {browser}")
+    match browser:
+        case "chrome":
+            my_driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        case "firefox":
+            my_driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+        case "safari":
+            my_driver = webdriver.Safari(service=Safari(GeckoDriverManager().install()))
+        case "edge":
+            my_driver = webdriver.Edge()
+        case "ie":
+            my_driver = webdriver.Ie()
+        case _:
+            raise TypeError(f"Expected 'chrome', 'firefox', 'safari', 'edge', 'ie' but got {browser}")
 
     my_driver.implicitly_wait(15)
     yield my_driver
@@ -35,5 +36,3 @@ def pytest_addoption(parser):
     parser.addoption(
         "--browser", action="store", default="chrome", help="browser to execute tests (chrome,firefox and Safari)"
     )
-
-

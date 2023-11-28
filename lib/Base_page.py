@@ -9,10 +9,10 @@ from selenium.webdriver.support import expected_conditions as ec
 class BasePage:
 
     def __init__(self, driver: WebDriver):
-        self._driver = driver
+        self.driver = driver
 
     def find(self, locator: tuple) -> WebElement:
-        return self._driver.find_element(*locator)
+        return self.driver.find_element(*locator)
 
     def type(self, locator: tuple, text: str, time: int = 15):
         self.wait_until_element_is_visible(locator, time)
@@ -27,11 +27,11 @@ class BasePage:
         self.find(locator).click()
 
     def wait_until_element_is_visible(self, locator: tuple, time: int = 15):
-        wait = WebDriverWait(self._driver, time)
+        wait = WebDriverWait(self.driver, time)
         wait.until(ec.visibility_of_element_located(locator))
 
     def wait_until_element_is_clickable(self, locator: tuple, time: int = 15):
-        wait = WebDriverWait(self._driver, time)
+        wait = WebDriverWait(self.driver, time)
         wait.until(ec.element_to_be_clickable(locator))
 
     def select_by_value(self, locator: tuple, value: str, time: int = 15):
@@ -49,12 +49,12 @@ class BasePage:
         divElement.textContent = '{country_code}';
         """
 
-        self._driver.execute_script(script, div_element)
+        self.driver.execute_script(script, div_element)
         div_element.click()
 
     @property
     def current_url(self) -> str:
-        return self._driver.current_url
+        return self.driver.current_url
 
     def is_displayed(self, locator: tuple) -> bool:
         try:
@@ -63,7 +63,7 @@ class BasePage:
             return False
 
     def open_url(self, url: str):
-        self._driver.get(url)
+        self.driver.get(url)
 
     def get_text(self, locator: tuple, time: int = 15) -> str:
         self.wait_until_element_is_visible(locator, time)
