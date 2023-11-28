@@ -16,5 +16,5 @@ def test_login_with_valid_username_and_invalid_password(driver, username, passwo
     login_page.login(username, password)
     negative_logging = LoggedInUnsuccessfully(driver)
 
-    assert negative_logging.button, "Header is not the same as expected"
+    assert negative_logging.header == "Epic sadface: Username and password do not match any user in this service", "Header is not the same as expected"
     assert negative_logging.expected_url == negative_logging.current_url, "Actual URL is not the same as expected"
