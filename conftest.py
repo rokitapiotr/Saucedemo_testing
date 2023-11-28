@@ -9,6 +9,7 @@ from selenium.webdriver.safari.service import Service as Safari
 
 @pytest.fixture(params=["chrome", "firefox", "safari", "edge", "ie"])
 def driver(request):
+
     browser = request.config.getoption("--browser")
     print(f"Creating {browser} driver")
 

@@ -18,5 +18,4 @@ class LoggedInSuccessfullyLocators:
 class LoggedInUnsuccessfullyLocators:
 
     url = "https://www.saucedemo.com/"
-    login_accepted_usernames = (By.XPATH, '//*[@id="login_credentials"]/h4')
-    login_accepted_passwords = (By.XPATH, '//*[@id="root"]/div/div[2]/div[2]/div/div[2]/h4')
+    header = (By.XPATH, '//*[@id="login_button_container"]/div/form/div[3]/h3')

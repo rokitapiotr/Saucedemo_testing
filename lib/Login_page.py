@@ -1,6 +1,6 @@
 from selenium.webdriver.remote.webdriver import WebDriver
 from locators import LoginPageLocators, LoggedInSuccessfullyLocators, LoggedInUnsuccessfullyLocators
-from Base_page import BasePage
+from Pages import BasePage
 
 
 class LoginPage(BasePage):
@@ -38,3 +38,6 @@ class LoggedInUnsuccessfully(BasePage):
     @property
     def expected_url(self) -> str:
         return LoggedInUnsuccessfullyLocators.url
+
+    def header(self) -> bool:
+        return self.is_displayed(LoggedInUnsuccessfullyLocators.header)
