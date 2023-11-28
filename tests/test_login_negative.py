@@ -1,5 +1,5 @@
 import pytest
-from lib.Login_page import LoginPage, LoggedInUnsuccessfully
+from lib.LoginPage import LoginPage, LoggedInUnsuccessfully
 from conftest import driver
 
 test_data = [
