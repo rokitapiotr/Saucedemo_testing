@@ -68,3 +68,15 @@ class BasePage:
     def get_text(self, locator: tuple, time: int = 15) -> str:
         self.wait_until_element_is_visible(locator, time)
         return self.find(locator).text
+
+    def scroll_to_element(self, locator: tuple, time: int = 15):
+        self.wait_until_element_is_visible(locator, time)
+        element = self.driver.find_element(*locator)
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
+    def switch_to_window_by_index(self, index: int = 1, time: int = 15):
+        wait = WebDriverWait(self.driver, time)
+        wait.until(lambda driver: len(self.driver.window_handles) > index)
+
+        handles = self.driver.window_handles
+        self.driver.switch_to.window(handles[index])

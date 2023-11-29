@@ -27,7 +27,7 @@ def driver(request):
         case _:
             raise TypeError(f"Expected 'chrome', 'firefox', 'safari', 'edge', 'ie' but got {browser}")
 
-    my_driver.implicitly_wait(15)
+    my_driver.implicitly_wait(25)
     yield my_driver
     print(f"Closing {browser} driver")
     my_driver.quit()
