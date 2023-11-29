@@ -42,4 +42,4 @@ class LoggedInUnsuccessfully(BasePage):
 
     @property
     def header(self) -> str:
-        return self.get_text(LoggedInUnsuccessfullyLocators.header_password_is_required)
+        return self.get_text(LoggedInUnsuccessfullyLocators.login_header)

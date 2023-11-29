@@ -9,6 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/venv" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/.pytest_cache" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/test_login" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/test_social_media" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
