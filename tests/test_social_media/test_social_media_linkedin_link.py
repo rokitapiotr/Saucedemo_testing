@@ -5,13 +5,13 @@ from conftest import driver
 from locators import MainPageSocialMediaLinkedInLocators, LoggedInSuccessfullyLocators
 
 
-test_data = [
+login_data = [
     ('standard_user', 'secret_sauce'),
 ]
 
 
 @pytest.mark.social_media
-@pytest.mark.parametrize("username, password", test_data)
+@pytest.mark.parametrize("username, password", login_data)
 def test_social_media_linkedin_link(driver, username, password):
 
     main_page = LoginPage(driver)

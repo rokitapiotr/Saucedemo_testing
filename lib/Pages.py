@@ -39,18 +39,10 @@ class BasePage:
         select = Select(self.find(locator))
         select.select_by_value(value)
 
-    def select_div_by_value(self, locator: tuple, country_code: str, time: int = 15):
+    def select_div_by_value(self, locator: tuple, option_value: str, time: int = 15):
         self.wait_until_element_is_visible(locator, time)
-        div_element = self.find(locator)
-        div_element.click()
-
-        script = f"""
-        var divElement = arguments[0];
-        divElement.textContent = '{country_code}';
-        """
-
-        self.driver.execute_script(script, div_element)
-        div_element.click()
+        select_element = Select(self.find(locator))
+        select_element.select_by_value(option_value)
 
     @property
     def current_url(self) -> str:

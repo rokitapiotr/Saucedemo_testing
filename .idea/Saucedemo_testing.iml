@@ -11,6 +11,9 @@
       <sourceFolder url="file://$MODULE_DIR$/.pytest_cache" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/test_login" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/test_social_media" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/test_adding_items_to_cart" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/test_removing_items_from_cart" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/test_select_items_functionality" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
