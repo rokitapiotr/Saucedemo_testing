@@ -2,8 +2,7 @@ import pytest
 from LoginPage import LoginPage
 from MainPage import MainPageTwitter
 from conftest import driver
-from locators import MainPageSocialMediaTwitterLocators, LoggedInSuccessfullyLocators
-
+from locators import *
 
 login_data = [
     ('standard_user', 'secret_sauce'),

@@ -1,8 +1,6 @@
 from selenium.webdriver.remote.webdriver import WebDriver
 from Pages import BasePage
-from locators import MainPageSocialMediaTwitterLocators, MainPageSocialMediaFacebookLocators, \
-    MainPageSocialMediaLinkedInLocators, MainPageSelectAtoZLocators, MainPageSelectZtoALocators, \
-    MainPageSelectLowToHighLocators, MainPageSelectHighToLowLocators, MainPageAddingButtonLocators
+from locators import *
 
 
 class MainPageTwitter(BasePage):

@@ -2,7 +2,7 @@ import pytest
 from LoginPage import LoginPage
 from MainPage import MainPageFacebook
 from conftest import driver
-from locators import MainPageSocialMediaFacebookLocators, LoggedInSuccessfullyLocators
+from locators import *
 
 
 login_data = [

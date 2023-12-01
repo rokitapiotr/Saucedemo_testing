@@ -1,5 +1,5 @@
 from selenium.webdriver.remote.webdriver import WebDriver
-from locators import LoginPageLocators, LoggedInSuccessfullyLocators, LoggedInUnsuccessfullyLocators
+from locators import *
 from Pages import BasePage
 
 

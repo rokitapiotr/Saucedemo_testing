@@ -2,8 +2,7 @@ import pytest
 from LoginPage import LoginPage
 from MainPage import MainPageLinkedIn
 from conftest import driver
-from locators import MainPageSocialMediaLinkedInLocators, LoggedInSuccessfullyLocators
-
+from locators import *
 
 login_data = [
     ('standard_user', 'secret_sauce'),
