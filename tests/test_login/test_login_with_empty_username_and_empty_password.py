@@ -4,7 +4,14 @@ from conftest import driver
 
 test_data = [
     ('', ''),
+    ('', 'secret_sauce'),
+    ('standard_user', ''),
+    ('useless_user', 'secret_sauce'),
+    ('locked_out_user', 'secret_sauce'),
+    ('standard_user', 'secret_sauce'),
+    ('standard_user', 'secret_peace')
 ]
+
 
 
 @pytest.mark.log_in
