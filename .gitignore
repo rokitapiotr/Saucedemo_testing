@@ -12,3 +12,5 @@ pytest_cache/
 geckodriver.log
 
 .idea/
+
+__init__.py

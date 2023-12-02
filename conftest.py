@@ -7,9 +7,8 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.safari.service import Service as Safari
 
 
-@pytest.fixture(params=["chrome", "firefox", "safari", "edge", "ie"])
+@pytest.fixture(params=["chrome", "firefox", "safari", "edge", "ie", "opera"])
 def driver(request):
-
     browser = request.config.getoption("--browser")
     print(f"Creating {browser} driver")
 
@@ -24,8 +23,10 @@ def driver(request):
             my_driver = webdriver.Edge()
         case "ie":
             my_driver = webdriver.Ie()
+        case "opera":
+            my_driver = webdriver.Opera()  # You may need to install the OperaDriverManager or provide the path.
         case _:
-            raise TypeError(f"Expected 'chrome', 'firefox', 'safari', 'edge', 'ie' but got {browser}")
+            raise TypeError(f"Expected 'chrome', 'firefox', 'safari', 'edge', 'ie', or 'opera' but got {browser}")
 
     my_driver.implicitly_wait(25)
     yield my_driver

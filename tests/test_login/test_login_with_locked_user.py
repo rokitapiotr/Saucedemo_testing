@@ -13,7 +13,6 @@ test_data = [
 ]
 
 
-
 @pytest.mark.log_in
 @pytest.mark.parametrize("username, password", test_data)
 def test_login_with_locked_user(driver, username, password):
