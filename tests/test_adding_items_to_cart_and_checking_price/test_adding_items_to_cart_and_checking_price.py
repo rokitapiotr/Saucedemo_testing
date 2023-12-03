@@ -2,7 +2,6 @@ import pytest
 from LoginPage import LoginPage, CheckOutTwo
 from conftest import driver
 from locators import MainPageButtonLocators, CartButtonLocators
-import time
 
 VAT_RATE = 0.08
 
