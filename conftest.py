@@ -24,7 +24,7 @@ def driver(request):
         case "ie":
             my_driver = webdriver.Ie()
         case "opera":
-            my_driver = webdriver.Opera()  # You may need to install the OperaDriverManager or provide the path.
+            my_driver = webdriver.Opera()
         case _:
             raise TypeError(f"Expected 'chrome', 'firefox', 'safari', 'edge', 'ie', or 'opera' but got {browser}")
 
