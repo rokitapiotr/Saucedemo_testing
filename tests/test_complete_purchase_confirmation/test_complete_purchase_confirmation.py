@@ -44,4 +44,3 @@ def test_complete_purchase_confirmation(driver, user_credentials, items_to_add, 
 
     assert check_purchase_confirmation.expected_header == 'Thank you for your order!', 'Headers are not the same'
     assert check_purchase_confirmation.is_displayed(CheckoutCompleteLocators.positive_sign), 'Image is not displayed'
-
