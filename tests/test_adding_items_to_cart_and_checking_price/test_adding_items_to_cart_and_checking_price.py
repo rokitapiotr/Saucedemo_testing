@@ -31,7 +31,6 @@ def test_adding_items_to_cart_and_checking_price(driver, user_credentials, items
     login_page = LoginPage(driver)
     login_page.open()
     login_page.login(*user_credentials)
-    time.sleep(1)
 
     item_prices = []
 
