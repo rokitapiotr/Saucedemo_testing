@@ -62,4 +62,4 @@ class MainPageAddingButtons(BasePage):
 
     @property
     def shopping_card_badge_counter(self):
-        return self.get_text(MainPageAddingButtonLocators.shopping_cart_counter)
+        return self.get_text(MainPageButtonLocators.shopping_cart_counter)
