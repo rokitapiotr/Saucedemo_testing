@@ -91,5 +91,6 @@ class CheckoutTwoButtonLocators:
 class CheckoutCompleteLocators:
     header_h2 = (By.XPATH, '//*[@id="checkout_complete_container"]/h2')
     positive_sign = (By.XPATH, '//*[@id="checkout_complete_container"]/img')
-    span_checkout = (By.XPATH, '//*[@id="header_container"]/div[2]/span')
     back_home_button = (By.XPATH, '//*[@id="back-to-products"]')
+
+

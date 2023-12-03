@@ -66,3 +66,15 @@ class CheckOutTwo(BasePage):
     @property
     def expected_total(self):
         return self.get_text(CheckoutTwoButtonLocators.total_price)
+
+
+class CheckoutComplete(BasePage):
+    def __init__(self, driver: WebDriver):
+        super().__init__(driver)
+
+    @property
+    def expected_header(self):
+        return self.get_text(CheckoutCompleteLocators.header_h2)
+
+    def expected_image_displayed(self):
+        return self.is_displayed(CheckoutCompleteLocators.positive_sign)

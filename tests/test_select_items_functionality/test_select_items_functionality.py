@@ -19,7 +19,8 @@ def option(request):
 @pytest.mark.parametrize("user_credentials, option", [(('standard_user', 'secret_sauce'), 'az'),
                                                       (('standard_user', 'secret_sauce'), 'za'),
                                                       (('standard_user', 'secret_sauce'), 'lohi'),
-                                                      (('standard_user', 'secret_sauce'), 'hilo')])
+                                                      (('standard_user', 'secret_sauce'), 'hilo')
+                                                      ])
 def test_select_items_functionality(driver, user_credentials, option):
     login_page = LoginPage(driver)
     login_page.open()
