@@ -1,6 +1,6 @@
 import pytest
-from LoginPage import LoginPage
-from MainPage import MainPageAddingButtons
+from user_interactions import UserInteractions
+from assertions import MainPage
 from conftest import driver
 from locators import MainPageButtonLocators
 
@@ -18,14 +18,14 @@ def user_credentials():
      MainPageButtonLocators.third_item_button],
 ])
 def test_adding_items_to_cart(driver, user_credentials, items_to_add):
-    login_page = LoginPage(driver)
+    login_page = UserInteractions(driver)
     login_page.open()
     login_page.login(*user_credentials)
 
     for item_button in items_to_add:
         login_page.click(item_button)
 
-    check_counter = MainPageAddingButtons(driver)
+    check_counter = MainPage(driver)
 
     expected_counter = len(items_to_add)
     assert check_counter.shopping_card_badge_counter == str(

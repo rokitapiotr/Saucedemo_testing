@@ -1,5 +1,7 @@
 import pytest
-from LoginPage import LoginPage, CheckoutComplete
+
+from assertions import CheckoutComplete
+from user_interactions import UserInteractions
 from conftest import driver
 from locators import *
 
@@ -28,7 +30,7 @@ def delivery_data():
 ])
 def test_complete_purchase_confirmation(driver, user_credentials, items_to_add, delivery_data,
                                         item_prices_locators):
-    login_page = LoginPage(driver)
+    login_page = UserInteractions(driver)
     login_page.open()
     login_page.login(*user_credentials)
 

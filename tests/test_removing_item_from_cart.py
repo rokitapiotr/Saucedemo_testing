@@ -1,6 +1,6 @@
 import pytest
-from LoginPage import LoginPage
-from MainPage import MainPageAddingButtons
+from user_interactions import UserInteractions
+from assertions import MainPage
 from conftest import driver
 from locators import MainPageButtonLocators
 
@@ -21,7 +21,7 @@ def user_credentials():
       MainPageButtonLocators.third_item_remove_button]),
 ])
 def test_removing_item_from_cart(driver, user_credentials, items_to_add, items_to_remove):
-    login_page = LoginPage(driver)
+    login_page = UserInteractions(driver)
     login_page.open()
     login_page.login(*user_credentials)
 
@@ -31,7 +31,7 @@ def test_removing_item_from_cart(driver, user_credentials, items_to_add, items_t
     for item_remove in items_to_remove:
         login_page.click(item_remove)
 
-    check_counter = MainPageAddingButtons(driver)
+    check_counter = MainPage(driver)
 
     assert not check_counter.is_displayed(
         MainPageButtonLocators.shopping_cart_counter), "The cart counter should not be displayed"

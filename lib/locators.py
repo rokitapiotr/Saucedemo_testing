@@ -57,13 +57,10 @@ class MainPageButtonLocators:
     cart_icon = (By.XPATH, '//*[@id="shopping_cart_container"]/a')
     first_item_button = (By.XPATH, '//*[@id="add-to-cart-sauce-labs-backpack"]')
     first_item_remove_button = (By.XPATH, '//*[@id="remove-sauce-labs-backpack"]')
-    first_item_price = (By.XPATH, '//*[@id="inventory_container"]/div/div[1]/div[2]/div[2]/div')
     second_item_button = (By.XPATH, '//*[@id="add-to-cart-sauce-labs-bolt-t-shirt"]')
     second_item_remove_button = (By.XPATH, '//*[@id="remove-sauce-labs-bolt-t-shirt"]')
-    second_item_price = (By.XPATH, '//*[@id="inventory_container"]/div/div[3]/div[2]/div[2]/div')
     third_item_button = (By.XPATH, '//*[@id="add-to-cart-sauce-labs-fleece-jacket"]')
     third_item_remove_button = (By.XPATH, '//*[@id="remove-sauce-labs-fleece-jacket"]')
-    third_item_price = (By.XPATH, '//*[@id="inventory_container"]/div/div[4]/div[2]/div[2]/div')
     shopping_cart_counter = (By.XPATH, '//*[@id="shopping_cart_container"]/a/span')
 
 

@@ -1,6 +1,6 @@
 import pytest
-from LoginPage import LoginPage
-from MainPage import MainPageSelect
+from user_interactions import UserInteractions
+from assertions import MainPage
 from conftest import driver
 from locators import MainPageSelectLocators
 
@@ -22,11 +22,11 @@ def option(request):
                                                       (('standard_user', 'secret_sauce'), 'hilo')
                                                       ])
 def test_select_items_functionality(driver, user_credentials, option):
-    login_page = LoginPage(driver)
+    login_page = UserInteractions(driver)
     login_page.open()
     login_page.login(*user_credentials)
     login_page.select_div_by_value(MainPageSelectLocators.select_name_price, option)
-    selected_option = MainPageSelect(driver)
+    selected_option = MainPage(driver)
 
     if option == 'az':
         assert selected_option.expected_div_text_a_to_z == 'Sauce Labs Backpack', f'First item for option {option} is not the same as expected'

@@ -1,5 +1,6 @@
 import pytest
-from LoginPage import LoginPage, CheckOutTwo
+from assertions import CheckOutTwo
+from user_interactions import UserInteractions
 from conftest import driver
 from locators import MainPageButtonLocators, CartButtonLocators
 
@@ -28,7 +29,7 @@ def delivery_data():
 ])
 def test_adding_items_to_cart_and_checking_price(driver, user_credentials, items_to_add, delivery_data,
                                                  item_prices_locators):
-    login_page = LoginPage(driver)
+    login_page = UserInteractions(driver)
     login_page.open()
     login_page.login(*user_credentials)
 
