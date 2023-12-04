@@ -63,7 +63,7 @@ class MainPage(BasePage):
         return self.get_text(MainPageButtonLocators.shopping_cart_counter)
 
 
-class CheckOutTwo(BasePage):
+class CheckOutTwoPage(BasePage):
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
 
@@ -80,7 +80,7 @@ class CheckOutTwo(BasePage):
         return self.get_text(CheckoutTwoButtonLocators.total_price)
 
 
-class CheckoutComplete(BasePage):
+class CheckoutCompletePage(BasePage):
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
 
