@@ -3,12 +3,7 @@ from user_interactions import UserInteractions
 from assertions import MainPage
 from conftest import driver
 from locators import MainPageLocators
-from fixtures.data_fixtures import valid_user_credentials
-
-
-@pytest.fixture(params=['az', 'za', 'lohi', 'hilo'])
-def select_functionality(request):
-    return request.param
+from fixtures.data_fixtures import valid_user_credentials, select_functionality
 
 
 @pytest.mark.select_items

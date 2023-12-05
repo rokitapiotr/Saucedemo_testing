@@ -12,5 +12,5 @@ def valid_delivery_data():
 
 
 @pytest.fixture(params=['az', 'za', 'lohi', 'hilo'])
-def select_options(request):
+def select_functionality(request):
     return request.param
