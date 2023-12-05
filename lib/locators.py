@@ -41,8 +41,11 @@ class MainPageLocators:
 class CartButtonLocators:
     checkout_button = (By.XPATH, '//*[@id="checkout"]')
     first_item_price = (By.XPATH, '//*[@id="cart_contents_container"]/div/div[1]/div[3]/div[2]/div[2]/div')
+    first_item_remove_button = (By.XPATH, '//*[@id="remove-sauce-labs-backpack"]')
     second_item_price = (By.XPATH, '//*[@id="cart_contents_container"]/div/div[1]/div[4]/div[2]/div[2]/div')
+    second_item_remove_button = (By.XPATH, '//*[@id="remove-sauce-labs-bolt-t-shirt"]')
     third_item_price = (By.XPATH, '//*[@id="cart_contents_container"]/div/div[1]/div[5]/div[2]/div[2]/div')
+    third_item_remove_button = (By.XPATH, '//*[@id="remove-sauce-labs-fleece-jacket"]')
 
 
 class CheckoutOneButtonLocators:

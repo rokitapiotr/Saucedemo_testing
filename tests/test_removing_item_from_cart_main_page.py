@@ -16,7 +16,7 @@ from fixtures.data_fixtures import valid_user_credentials
      [MainPageLocators.first_item_remove_button, MainPageLocators.second_item_remove_button,
       MainPageLocators.third_item_remove_button]),
 ])
-def test_removing_item_from_cart(driver, valid_user_credentials, items_to_add, items_to_remove):
+def test_removing_item_from_cart_main_page(driver, valid_user_credentials, items_to_add, items_to_remove):
     login_page = UserInteractions(driver)
     login_page.open()
     login_page.login(*valid_user_credentials)
