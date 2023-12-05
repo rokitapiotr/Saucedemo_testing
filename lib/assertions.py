@@ -18,7 +18,7 @@ class LoginPage(BasePage):
 
     @property
     def expected_url_negative_login(self) -> str:
-        return LoginPageLocators.url
+        return LoginPageLocators.url_logout
 
     @property
     def header_negative_login(self) -> str:
@@ -61,6 +61,10 @@ class MainPage(BasePage):
     @property
     def shopping_card_badge_counter(self):
         return self.get_text(MainPageLocators.shopping_cart_counter)
+
+    @property
+    def expected_url_about(self) -> str:
+        return MainPageLocators.about_url
 
 
 class CheckOutTwoPage(BasePage):

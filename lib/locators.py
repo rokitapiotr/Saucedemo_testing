@@ -3,11 +3,11 @@ from selenium.webdriver.common.by import By
 
 class LoginPageLocators:
     url = "https://www.saucedemo.com"
+    url_logout = "https://www.saucedemo.com/"
     input_login = (By.XPATH, '//*[@id="user-name"]')
     input_password = (By.XPATH, '//*[@id="password"]')
     login_button = (By.XPATH, '//*[@id="login-button"]')
     footer = (By.XPATH, '//*[@id="page_wrapper"]/footer/div')
-    url_unsuccessful_login = "https://www.saucedemo.com/"
     login_header = (By.XPATH, '//*[@id="login_button_container"]/div/form/div[3]/h3')
 
 
@@ -31,6 +31,11 @@ class MainPageLocators:
     third_item_button = (By.XPATH, '//*[@id="add-to-cart-sauce-labs-fleece-jacket"]')
     third_item_remove_button = (By.XPATH, '//*[@id="remove-sauce-labs-fleece-jacket"]')
     shopping_cart_counter = (By.XPATH, '//*[@id="shopping_cart_container"]/a/span')
+    menu_button = (By.XPATH, '//*[@id="react-burger-menu-btn"]')
+    logout_button = (By.XPATH, '//*[@id="logout_sidebar_link"]')
+    about_button = (By.XPATH, '//*[@id="about_sidebar_link"]')
+    reset_app_button = (By.XPATH, '//*[@id="reset_sidebar_link"]')
+    about_url = 'https://saucelabs.com/'
 
 
 class CartButtonLocators:
@@ -58,4 +63,3 @@ class CheckoutCompleteLocators:
     header_h2 = (By.XPATH, '//*[@id="checkout_complete_container"]/h2')
     positive_sign = (By.XPATH, '//*[@id="checkout_complete_container"]/img')
     back_home_button = (By.XPATH, '//*[@id="back-to-products"]')
-
