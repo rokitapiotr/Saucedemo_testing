@@ -2,12 +2,8 @@ import pytest
 from user_interactions import UserInteractions
 from assertions import MainPage
 from conftest import driver
-from locators import MainPageSelectLocators
-
-
-@pytest.fixture
-def user_credentials():
-    return 'standard_user', 'secret_sauce'
+from locators import MainPageLocators
+from fixtures.data_fixtures import valid_user_credentials
 
 
 @pytest.fixture(params=['az', 'za', 'lohi', 'hilo'])
@@ -16,16 +12,13 @@ def option(request):
 
 
 @pytest.mark.select_items
-@pytest.mark.parametrize("user_credentials, option", [(('standard_user', 'secret_sauce'), 'az'),
-                                                      (('standard_user', 'secret_sauce'), 'za'),
-                                                      (('standard_user', 'secret_sauce'), 'lohi'),
-                                                      (('standard_user', 'secret_sauce'), 'hilo')
-                                                      ])
-def test_select_items_functionality(driver, user_credentials, option):
+@pytest.mark.parametrize("option", ['az', 'za', 'lohi', 'hilo'])
+def test_select_items_functionality(driver, option, valid_user_credentials):
     login_page = UserInteractions(driver)
     login_page.open()
-    login_page.login(*user_credentials)
-    login_page.select_div_by_value(MainPageSelectLocators.select_name_price, option)
+    login_page.login(*valid_user_credentials)
+
+    login_page.select_div_by_value(MainPageLocators.select_name_price, option)
     selected_option = MainPage(driver)
 
     if option == 'az':

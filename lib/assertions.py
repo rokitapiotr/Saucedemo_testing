@@ -10,19 +10,19 @@ class LoginPage(BasePage):
 
     @property
     def expected_url_positive_login(self) -> str:
-        return LoggedInSuccessfullyLocators.url
+        return LoginPageLocators.url
 
     @property
     def footer_positive_login(self) -> str:
-        return self.get_text(LoggedInSuccessfullyLocators.footer)
+        return self.get_text(LoginPageLocators.footer)
 
     @property
     def expected_url_negative_login(self) -> str:
-        return LoggedInUnsuccessfullyLocators.url
+        return LoginPageLocators.url
 
     @property
     def header_negative_login(self) -> str:
-        return self.get_text(LoggedInUnsuccessfullyLocators.login_header)
+        return self.get_text(LoginPageLocators.login_header)
 
 
 class MainPage(BasePage):
@@ -32,35 +32,35 @@ class MainPage(BasePage):
 
     @property
     def expected_url_twitter(self) -> str:
-        return MainPageSocialMediaTwitterLocators.twitter_url
+        return MainPageLocators.twitter_url
 
     @property
     def expected_url_facebook(self) -> str:
-        return MainPageSocialMediaFacebookLocators.facebook_url
+        return MainPageLocators.facebook_url
 
     @property
     def expected_url_linkedin(self) -> str:
-        return MainPageSocialMediaLinkedInLocators.linkedin_url
+        return MainPageLocators.linkedin_url
 
     @property
     def expected_div_text_a_to_z(self) -> str:
-        return self.get_text(MainPageSelectAtoZLocators.first_product_name)
+        return self.get_text(MainPageLocators.first_product_name_a_z)
 
     @property
     def expected_div_text_z_to_a(self) -> str:
-        return self.get_text(MainPageSelectZtoALocators.first_product_name)
+        return self.get_text(MainPageLocators.first_product_name_z_a)
 
     @property
     def expected_div_text_low_to_high(self) -> str:
-        return self.get_text(MainPageSelectLowToHighLocators.first_product_name)
+        return self.get_text(MainPageLocators.first_product_name_low_high)
 
     @property
     def expected_div_text_high_to_low(self) -> str:
-        return self.get_text(MainPageSelectHighToLowLocators.first_product_name)
+        return self.get_text(MainPageLocators.first_product_name_high_low)
 
     @property
     def shopping_card_badge_counter(self):
-        return self.get_text(MainPageButtonLocators.shopping_cart_counter)
+        return self.get_text(MainPageLocators.shopping_cart_counter)
 
 
 class CheckOutTwoPage(BasePage):

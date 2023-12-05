@@ -3,20 +3,16 @@ from user_interactions import UserInteractions
 from assertions import MainPage
 from conftest import driver
 from locators import *
-
-
-@pytest.fixture
-def user_credentials():
-    return 'standard_user', 'secret_sauce'
+from fixtures.data_fixtures import valid_user_credentials
 
 
 @pytest.mark.social_media
-def test_social_media_facebook_link(driver, user_credentials):
+def test_social_media_facebook_link(driver, valid_user_credentials):
     main_page = UserInteractions(driver)
     main_page.open()
-    main_page.login(*user_credentials)
-    main_page.scroll_to_element(LoggedInSuccessfullyLocators.footer)
-    main_page.click(MainPageSocialMediaFacebookLocators.facebook_icon)
+    main_page.login(*valid_user_credentials)
+    main_page.scroll_to_element(LoginPageLocators.footer)
+    main_page.click(MainPageLocators.facebook_icon)
     main_page.switch_to_window_by_index()
     click_on_icon = MainPage(driver)
 
@@ -24,12 +20,12 @@ def test_social_media_facebook_link(driver, user_credentials):
 
 
 @pytest.mark.social_media
-def test_social_media_linkedin_link(driver, user_credentials):
+def test_social_media_linkedin_link(driver, valid_user_credentials):
     main_page = UserInteractions(driver)
     main_page.open()
-    main_page.login(*user_credentials)
-    main_page.scroll_to_element(LoggedInSuccessfullyLocators.footer)
-    main_page.click(MainPageSocialMediaLinkedInLocators.linkedin_icon)
+    main_page.login(*valid_user_credentials)
+    main_page.scroll_to_element(LoginPageLocators.footer)
+    main_page.click(MainPageLocators.linkedin_icon)
     main_page.switch_to_window_by_index()
     click_on_icon = MainPage(driver)
 
@@ -37,12 +33,12 @@ def test_social_media_linkedin_link(driver, user_credentials):
 
 
 @pytest.mark.social_media
-def test_social_media_twitter_link(driver, user_credentials):
+def test_social_media_twitter_link(driver, valid_user_credentials):
     main_page = UserInteractions(driver)
     main_page.open()
-    main_page.login(*user_credentials)
-    main_page.scroll_to_element(LoggedInSuccessfullyLocators.footer)
-    main_page.click(MainPageSocialMediaTwitterLocators.twitter_icon)
+    main_page.login(*valid_user_credentials)
+    main_page.scroll_to_element(LoginPageLocators.footer)
+    main_page.click(MainPageLocators.twitter_icon)
     main_page.switch_to_window_by_index()
     click_on_icon = MainPage(driver)
 

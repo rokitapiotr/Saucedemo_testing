@@ -6,54 +6,23 @@ class LoginPageLocators:
     input_login = (By.XPATH, '//*[@id="user-name"]')
     input_password = (By.XPATH, '//*[@id="password"]')
     login_button = (By.XPATH, '//*[@id="login-button"]')
-
-
-class LoggedInSuccessfullyLocators:
-    url = "https://www.saucedemo.com/inventory.html"
     footer = (By.XPATH, '//*[@id="page_wrapper"]/footer/div')
-
-
-class LoggedInUnsuccessfullyLocators:
-    url = "https://www.saucedemo.com/"
+    url_unsuccessful_login = "https://www.saucedemo.com/"
     login_header = (By.XPATH, '//*[@id="login_button_container"]/div/form/div[3]/h3')
 
 
-class MainPageSocialMediaFacebookLocators:
+class MainPageLocators:
     facebook_icon = (By.XPATH, '//*[@id="page_wrapper"]/footer/ul/li[2]/a')
     facebook_url = 'https://www.facebook.com/saucelabs'
-
-
-class MainPageSocialMediaTwitterLocators:
     twitter_icon = (By.XPATH, '//*[@id="page_wrapper"]/footer/ul/li[1]/a')
     twitter_url = 'https://twitter.com/saucelabs'
-
-
-class MainPageSocialMediaLinkedInLocators:
     linkedin_icon = (By.XPATH, '//*[@id="page_wrapper"]/footer/ul/li[3]/a')
     linkedin_url = 'https://www.linkedin.com/company/sauce-labs/'
-
-
-class MainPageSelectLocators:
     select_name_price = (By.XPATH, '//*[@id="header_container"]/div[2]/div/span/select')
-
-
-class MainPageSelectAtoZLocators:
-    first_product_name = (By.XPATH, '//*[@id="item_4_title_link"]/div')
-
-
-class MainPageSelectZtoALocators:
-    first_product_name = (By.XPATH, '//*[@id="item_3_title_link"]/div')
-
-
-class MainPageSelectLowToHighLocators:
-    first_product_name = (By.XPATH, '//*[@id="item_2_title_link"]/div')
-
-
-class MainPageSelectHighToLowLocators:
-    first_product_name = (By.XPATH, '//*[@id="item_5_title_link"]/div')
-
-
-class MainPageButtonLocators:
+    first_product_name_a_z = (By.XPATH, '//*[@id="item_4_title_link"]/div')
+    first_product_name_z_a = (By.XPATH, '//*[@id="item_3_title_link"]/div')
+    first_product_name_low_high = (By.XPATH, '//*[@id="item_2_title_link"]/div')
+    first_product_name_high_low = (By.XPATH, '//*[@id="item_5_title_link"]/div')
     cart_icon = (By.XPATH, '//*[@id="shopping_cart_container"]/a')
     first_item_button = (By.XPATH, '//*[@id="add-to-cart-sauce-labs-backpack"]')
     first_item_remove_button = (By.XPATH, '//*[@id="remove-sauce-labs-backpack"]')
@@ -89,5 +58,4 @@ class CheckoutCompleteLocators:
     header_h2 = (By.XPATH, '//*[@id="checkout_complete_container"]/h2')
     positive_sign = (By.XPATH, '//*[@id="checkout_complete_container"]/img')
     back_home_button = (By.XPATH, '//*[@id="back-to-products"]')
-
 
