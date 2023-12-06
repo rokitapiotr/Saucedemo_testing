@@ -10,7 +10,7 @@ class LoginPage(BasePage):
 
     @property
     def expected_url_positive_login(self) -> str:
-        return LoginPageLocators.url
+        return LoginPageLocators.url_positive_login
 
     @property
     def footer_positive_login(self) -> str:

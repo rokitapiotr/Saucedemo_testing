@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 class LoginPageLocators:
     url = "https://www.saucedemo.com"
     url_logout = "https://www.saucedemo.com/"
+    url_positive_login = "https://www.saucedemo.com/inventory.html"
     input_login = (By.XPATH, '//*[@id="user-name"]')
     input_password = (By.XPATH, '//*[@id="password"]')
     login_button = (By.XPATH, '//*[@id="login-button"]')
