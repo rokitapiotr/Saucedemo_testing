@@ -2,20 +2,11 @@ import pytest
 from assertions import LoginPage
 from lib.user_interactions import UserInteractions
 from conftest import driver
-
-test_data = [
-    ('', ''),
-    ('', 'secret_sauce'),
-    ('standard_user', ''),
-    ('useless_user', 'secret_sauce'),
-    ('locked_out_user', 'secret_sauce'),
-    ('standard_user', 'secret_sauce'),
-    ('standard_user', 'secret_peace')
-]
+from documentation.crudential_data import test_data_username_password
 
 
 @pytest.mark.log_in
-@pytest.mark.parametrize("username, password", test_data)
+@pytest.mark.parametrize("username, password", test_data_username_password)
 def test_login_with_valid_credentials(driver, username, password):
 
     login_page = UserInteractions(driver)
@@ -28,7 +19,7 @@ def test_login_with_valid_credentials(driver, username, password):
 
 
 @pytest.mark.log_in
-@pytest.mark.parametrize("username, password", test_data)
+@pytest.mark.parametrize("username, password", test_data_username_password)
 def test_login_with_empty_username_and_empty_password(driver, username, password):
     login_page = UserInteractions(driver)
     login_page.open()
@@ -40,7 +31,7 @@ def test_login_with_empty_username_and_empty_password(driver, username, password
 
 
 @pytest.mark.log_in
-@pytest.mark.parametrize("username, password", test_data)
+@pytest.mark.parametrize("username, password", test_data_username_password)
 def test_login_with_empty_username_and_valid_password(driver, username, password):
     login_page = UserInteractions(driver)
     login_page.open()
@@ -52,7 +43,7 @@ def test_login_with_empty_username_and_valid_password(driver, username, password
 
 
 @pytest.mark.log_in
-@pytest.mark.parametrize("username, password", test_data)
+@pytest.mark.parametrize("username, password", test_data_username_password)
 def test_login_with_invalid_username_and_valid_password(driver, username, password):
     login_page = UserInteractions(driver)
     login_page.open()
@@ -64,7 +55,7 @@ def test_login_with_invalid_username_and_valid_password(driver, username, passwo
 
 
 @pytest.mark.log_in
-@pytest.mark.parametrize("username, password", test_data)
+@pytest.mark.parametrize("username, password", test_data_username_password)
 def test_login_with_locked_user(driver, username, password):
     login_page = UserInteractions(driver)
     login_page.open()
@@ -76,7 +67,7 @@ def test_login_with_locked_user(driver, username, password):
 
 
 @pytest.mark.log_in
-@pytest.mark.parametrize("username, password", test_data)
+@pytest.mark.parametrize("username, password", test_data_username_password)
 def test_login_with_valid_username_and_empty_password(driver, username, password):
     login_page = UserInteractions(driver)
     login_page.open()
@@ -88,7 +79,7 @@ def test_login_with_valid_username_and_empty_password(driver, username, password
 
 
 @pytest.mark.log_in
-@pytest.mark.parametrize("username, password", test_data)
+@pytest.mark.parametrize("username, password", test_data_username_password)
 def test_login_with_valid_username_and_invalid_password(driver, username, password):
     login_page = UserInteractions(driver)
     login_page.open()
