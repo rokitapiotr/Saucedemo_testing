@@ -7,3 +7,14 @@ test_data_username_password = [
     ('standard_user', 'secret_sauce'),
     ('standard_user', 'secret_peace')
 ]
+
+test_delivery_data = [
+    ('', 'Rokita', '55-555'),
+    ('Piotr', '', '55-555'),
+    ('Piotr', 'Rokita', ''),
+    ('', '', '55-555'),
+    ('Piotr', '', ''),
+    ('', 'Rokita', ''),
+    ('Piotr', 'Rokita', '55-555'),
+]
+

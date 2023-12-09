@@ -59,7 +59,7 @@ class MainPage(BasePage):
         return self.get_text(MainPageLocators.first_product_name_high_low)
 
     @property
-    def shopping_card_badge_counter(self):
+    def shopping_card_badge_counter(self) -> str:
         return self.get_text(MainPageLocators.shopping_cart_counter)
 
     @property
@@ -67,21 +67,34 @@ class MainPage(BasePage):
         return MainPageLocators.about_url
 
 
+class CheckOutOnePage(BasePage):
+    def __init__(self, driver: WebDriver):
+        super().__init__(driver)
+
+    @property
+    def error_message_output(self) -> str:
+        return self.get_text(CheckoutOneLocators.checkout_one_error_message_container)
+
+
 class CheckOutTwoPage(BasePage):
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
 
     @property
-    def expected_total_item_price(self):
-        return self.get_text(CheckoutTwoButtonLocators.item_total)
+    def expected_total_item_price(self) -> str:
+        return self.get_text(CheckoutTwoLocators.item_total)
 
     @property
-    def expected_tax_total(self):
-        return self.get_text(CheckoutTwoButtonLocators.item_tax)
+    def expected_tax_total(self) -> str:
+        return self.get_text(CheckoutTwoLocators.item_tax)
 
     @property
-    def expected_total(self):
-        return self.get_text(CheckoutTwoButtonLocators.total_price)
+    def expected_total(self) -> str:
+        return self.get_text(CheckoutTwoLocators.total_price)
+
+    @property
+    def expected_url(self) -> str:
+        return self.get_text(CheckoutTwoLocators.url_checkout_step_two)
 
 
 class CheckoutCompletePage(BasePage):
@@ -89,7 +102,7 @@ class CheckoutCompletePage(BasePage):
         super().__init__(driver)
 
     @property
-    def expected_header(self):
+    def expected_header(self) -> str:
         return self.get_text(CheckoutCompleteLocators.header_h2)
 
     def expected_image_displayed(self):

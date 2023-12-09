@@ -17,7 +17,7 @@ class UserInteractions(BasePage):
         self.click(LoginPageLocators.login_button)
 
     def insert_delivery_details(self, firstname, lastname, zip_code):
-        self.type(CheckoutOneButtonLocators.first_name_input, firstname)
-        self.type(CheckoutOneButtonLocators.last_name_input, lastname)
-        self.type(CheckoutOneButtonLocators.zip_code_input, zip_code)
-        self.click(CheckoutOneButtonLocators.continue_button)
+        self.type(CheckoutOneLocators.first_name_input, firstname)
+        self.type(CheckoutOneLocators.last_name_input, lastname)
+        self.type(CheckoutOneLocators.zip_code_input, zip_code)
+        self.click(CheckoutOneLocators.continue_button)

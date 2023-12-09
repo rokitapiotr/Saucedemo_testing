@@ -31,7 +31,7 @@ def test_complete_purchase_confirmation(driver, valid_user_credentials, items_to
     login_page.click(MainPageLocators.cart_icon)
     login_page.click(CartButtonLocators.checkout_button)
     login_page.insert_delivery_details(*valid_delivery_data)
-    login_page.click(CheckoutTwoButtonLocators.finish_button)
+    login_page.click(CheckoutTwoLocators.finish_button)
 
     check_purchase_confirmation = CheckoutCompletePage(driver)
 

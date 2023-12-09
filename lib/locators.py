@@ -49,18 +49,20 @@ class CartButtonLocators:
     third_item_remove_button = (By.XPATH, '//*[@id="remove-sauce-labs-fleece-jacket"]')
 
 
-class CheckoutOneButtonLocators:
+class CheckoutOneLocators:
     first_name_input = (By.XPATH, '//*[@id="first-name"]')
     last_name_input = (By.XPATH, '//*[@id="last-name"]')
     zip_code_input = (By.XPATH, '//*[@id="postal-code"]')
     continue_button = (By.XPATH, '//*[@id="continue"]')
+    checkout_one_error_message_container = (By.XPATH, '//*[@id="checkout_info_container"]/div/form/div[1]/div[4]/h3')
 
 
-class CheckoutTwoButtonLocators:
+class CheckoutTwoLocators:
     item_total = (By.XPATH, '//*[@id="checkout_summary_container"]/div/div[2]/div[6]')
     item_tax = (By.XPATH, '//*[@id="checkout_summary_container"]/div/div[2]/div[7]')
     total_price = (By.XPATH, '//*[@id="checkout_summary_container"]/div/div[2]/div[8]')
     finish_button = (By.XPATH, '//*[@id="finish"]')
+    url_checkout_step_two = 'https://www.saucedemo.com/checkout-step-two.html'
 
 
 class CheckoutCompleteLocators:
