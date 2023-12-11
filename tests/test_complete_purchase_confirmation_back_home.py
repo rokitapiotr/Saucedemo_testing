@@ -8,7 +8,7 @@ from fixtures.data_fixtures import valid_user_credentials, valid_delivery_data
 VAT_RATE = 0.08
 
 
-@pytest.mark.check_price
+@pytest.mark.purchase_confirmation
 @pytest.mark.parametrize("items_to_add, item_prices_locators", [
     ([MainPageLocators.first_item_button], [CartButtonLocators.first_item_price]),
     ([MainPageLocators.first_item_button, MainPageLocators.second_item_button],

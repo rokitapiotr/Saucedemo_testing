@@ -6,7 +6,7 @@ from locators import MainPageLocators
 from fixtures.data_fixtures import valid_user_credentials
 
 
-@pytest.mark.log_out
+@pytest.mark.about_button
 def test_about_button(driver, valid_user_credentials):
 
     login_page = UserInteractions(driver)
