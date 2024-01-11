@@ -11,6 +11,3 @@ def valid_delivery_data():
     return 'Piotr', 'Rokita', '55-555'
 
 
-@pytest.fixture(params=['az', 'za', 'lohi', 'hilo'])
-def select_functionality(request):
-    return request.param

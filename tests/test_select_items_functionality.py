@@ -3,12 +3,12 @@ from user_interactions import UserInteractions
 from assertions import MainPage
 from conftest import driver
 from locators import MainPageLocators
-from fixtures.data_fixtures import valid_user_credentials, select_functionality
+from fixtures.data_fixtures import valid_user_credentials
 
 
 @pytest.mark.select_items
 @pytest.mark.parametrize("select_functionality", ['az', 'za', 'lohi', 'hilo'])
-def test_select_items_functionality(driver, select_functionality, valid_user_credentials):
+def test_select_items_functionality(driver, valid_user_credentials, select_functionality):
     login_page = UserInteractions(driver)
     login_page.open()
     login_page.login(*valid_user_credentials)
