@@ -2,7 +2,7 @@ import pytest
 from assertions import LoginPage
 from lib.user_interactions import UserInteractions
 from conftest import driver
-from documentation.crudential_data import test_data_username_password
+from documentation.credential_data import test_data_username_password
 
 
 @pytest.mark.log_in

@@ -4,7 +4,7 @@ from user_interactions import UserInteractions
 from conftest import driver
 from locators import *
 from fixtures.data_fixtures import valid_user_credentials
-from documentation.crudential_data import test_delivery_data
+from documentation.credential_data import test_delivery_data
 
 
 @pytest.mark.delivery_data

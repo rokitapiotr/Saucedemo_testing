@@ -17,4 +17,3 @@ test_delivery_data = [
     ('', 'Rokita', ''),
     ('Piotr', 'Rokita', '55-555'),
 ]
-
