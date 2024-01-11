@@ -18,10 +18,6 @@ class BasePage:
         self.wait_until_element_is_visible(locator, time)
         self.find(locator).send_keys(text)
 
-    def clear(self, locator: tuple, time: int = 25):
-        self.wait_until_element_is_visible(locator, time)
-        self.find(locator).clear()
-
     def click(self, locator: tuple, time: int = 25):
         self.wait_until_element_is_visible(locator, time)
         self.find(locator).click()
@@ -30,23 +26,10 @@ class BasePage:
         wait = WebDriverWait(self.driver, time)
         wait.until(ec.visibility_of_element_located(locator))
 
-    def wait_until_element_is_clickable(self, locator: tuple, time: int = 25):
-        wait = WebDriverWait(self.driver, time)
-        wait.until(ec.element_to_be_clickable(locator))
-
-    def select_by_value(self, locator: tuple, value: str, time: int = 25):
-        self.wait_until_element_is_visible(locator, time)
-        select = Select(self.find(locator))
-        select.select_by_value(value)
-
     def select_div_by_value(self, locator: tuple, option_value: str, time: int = 25):
         self.wait_until_element_is_visible(locator, time)
         select_element = Select(self.find(locator))
         select_element.select_by_value(option_value)
-
-    @property
-    def current_url(self) -> str:
-        return self.driver.current_url
 
     def is_displayed(self, locator: tuple) -> bool:
         try:
