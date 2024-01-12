@@ -1,4 +1,3 @@
-from selenium.webdriver.remote.webdriver import WebDriver
 from locators import *
 from base_page import BasePage
 
