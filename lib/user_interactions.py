@@ -5,9 +5,6 @@ from base_page import BasePage
 
 class UserInteractions(BasePage):
 
-    def __init__(self, driver: WebDriver):
-        super().__init__(driver)
-
     def open(self):
         self.open_url(LoginPageLocators.url)
 
